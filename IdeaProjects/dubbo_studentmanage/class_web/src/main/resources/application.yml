@@ -1,0 +1,7 @@
+dubbo:
+  application:
+    name: class_web
+  registry:
+    address: zookeeper://192.168.59.131:2181
+server:
+  port: 9999
