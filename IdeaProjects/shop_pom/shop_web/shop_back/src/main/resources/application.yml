@@ -1,0 +1,20 @@
+spring:
+  thymeleaf:
+    cache: false
+dubbo:
+  registry:
+    address: zookeeper://192.168.59.131:2181
+  application:
+    name: back_web
+  consumer:
+    check: false
+fdfs:
+  pool:
+    jmx-enabled: false
+  #缩略图
+  thumb-image:
+    width: 100
+    height: 100
+  #tracker追踪器地址
+  tracker-list:
+    - 192.168.59.131:22122
