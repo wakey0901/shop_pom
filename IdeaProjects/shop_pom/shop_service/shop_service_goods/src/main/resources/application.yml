@@ -1,39 +1,44 @@
-server:
-  port: 9090
+
 spring:
   datasource:
     url: jdbc:mysql:///shop1810
     username: root
     password: 123
     driver-class-name: com.mysql.jdbc.Driver
-    #Ê¹ÓÃDruidÁ¬½Ó³Ø
+    #ä½¿ç”¨Druidè¿æ¥æ± 
     type: com.alibaba.druid.pool.DruidDataSource
 
     druid:
-      #×îĞ¡Á¬½ÓÊı
+      #æœ€å°è¿æ¥æ•°
       min-idle: 5
-      #×î´óÁ¬½ÓÊı
+      #æœ€å¤§è¿æ¥æ•°
       max-active: 100
-      #×î´óµÈ´ıÊ±¼ä
+      #æœ€å¤§ç­‰å¾…æ—¶é—´
       max-wait: 60000
-      #³õÊ¼»¯Á¬½ÓÊı
+      #åˆå§‹åŒ–è¿æ¥æ•°
       initial-size: 5
-      #ÅäÖÃdruidµÄ¼à¿ØÖĞĞÄ
+      #é…ç½®druidçš„ç›‘æ§ä¸­å¿ƒ
       stat-view-servlet:
-        #¿ªÆô¼à¿ØÖĞĞÄ
+        #å¼€å¯ç›‘æ§ä¸­å¿ƒ
         enabled: true
-        #¼à¿ØÖĞĞÄ·ÃÎÊµÄurl
+        #ç›‘æ§ä¸­å¿ƒè®¿é—®çš„url
         url-pattern: /druid/*
-        #ÅäÖÃ¼à¿ØÖĞĞÄµÄÓÃ»§ÃûºÍÃÜÂë
+        #é…ç½®ç›‘æ§ä¸­å¿ƒçš„ç”¨æˆ·åå’Œå¯†ç 
         login-username: admin
         login-password: admin
-        #°×Ãûµ¥
+        #ç™½åå•
         allow: 127.0.0.1
-        #ºÚÃûµ¥
+        #é»‘åå•
         #deny:
       web-stat-filter:
         enabled: true
         url-pattern: /*
+  rabbitmq:
+    host: 192.168.59.131
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /admin
 
 dubbo:
   application:
@@ -43,3 +48,7 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880
+  consumer:
+    check: false
+server:
+  port: 9090

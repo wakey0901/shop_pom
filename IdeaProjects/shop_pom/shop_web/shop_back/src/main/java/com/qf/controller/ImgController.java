@@ -26,7 +26,7 @@ public class ImgController {
 
     @Autowired
     private FastFileStorageClient fastFileStorageClient;
-    private static final String UPLOAD_PATH = "e:\\imgs";
+    //private static final String UPLOAD_PATH = "e:\\imgs";
 
     @RequestMapping("/uploader")
     @ResponseBody

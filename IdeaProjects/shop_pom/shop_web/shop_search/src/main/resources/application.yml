@@ -1,0 +1,13 @@
+server:
+  port: 8082
+spring:
+  data:
+    solr:
+      host: http://192.168.59.131:8080/solr
+  thymeleaf:
+    cache: false
+dubbo:
+  application:
+    name: search_web
+  registry:
+    address: zookeeper://192.168.59.131:2181
